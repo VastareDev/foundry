@@ -1,0 +1,50 @@
+{
+  "name": "@vastare/foundry",
+  "version": "0.0.1",
+  "description": "Framework agnostic design foundation for Vastare, tokens, resets, and element styling in TypeScript.",
+  "author": "Vastare Development Team <support@vastare.co.uk>",
+  "license": "ISC",
+  "homepage": "https://github.com/VastareDev/foundry#readme",
+  "bugs": {
+    "url": "https://github.com/VastareDev/foundry/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VastareDev/foundry.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./elements/html": {
+      "import": "./dist/elements/anchor/anchor.js",
+      "types": "./dist/elements/anchor/anchor.d.ts"
+    },
+    "./elements/body": {
+      "import": "./dist/elements/paragraph/paragraph.js",
+      "types": "./dist/elements/paragraph/paragraph.d.ts"
+    }
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:js": "vite build",
+    "build:css:elements": "sass --style=compressed src/elements:dist/elements",
+    "build": "npm run build:js && npm run build:css:elements",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "vite": "^7.2.2",
+    "sass": "^1.93.3",
+    "typescript": "^5.9.3"
+  }
+}
