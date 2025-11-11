@@ -1,6 +1,6 @@
 {
   "name": "@vastare/foundry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Framework agnostic design foundation for Vastare, tokens, resets, and element styling in TypeScript.",
   "author": "Vastare Development Team <support@vastare.co.uk>",
   "license": "ISC",
