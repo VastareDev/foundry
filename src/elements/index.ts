@@ -12,4 +12,7 @@
  */
 
 export * as anchor from "./anchor";
+export * as article from "./article";
+export * as div from "./div";
 export * as paragraph from "./paragraph";
+export * as section from "./section";
