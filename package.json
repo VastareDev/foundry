@@ -1,6 +1,6 @@
 {
   "name": "@vastare/foundry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Framework agnostic design foundation for Vastare, tokens, resets, and element styling in TypeScript.",
   "author": "Vastare Development Team <support@vastare.co.uk>",
   "license": "ISC",
@@ -21,13 +21,25 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./elements/html": {
+    "./elements/anchor": {
       "import": "./dist/elements/anchor/anchor.js",
       "types": "./dist/elements/anchor/anchor.d.ts"
     },
-    "./elements/body": {
+    "./elements/article": {
+      "import": "./dist/elements/article/article.js",
+      "types": "./dist/elements/article/article.d.ts"
+    },
+    "./elements/div": {
+      "import": "./dist/elements/div/div.js",
+      "types": "./dist/elements/div/div.d.ts"
+    },
+    "./elements/paragraph": {
       "import": "./dist/elements/paragraph/paragraph.js",
       "types": "./dist/elements/paragraph/paragraph.d.ts"
+    },
+    "./elements/section": {
+      "import": "./dist/elements/section/section.js",
+      "types": "./dist/elements/section/section.d.ts"
     }
   },
   "sideEffects": [
