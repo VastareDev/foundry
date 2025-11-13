@@ -11,5 +11,6 @@
  * This pattern ensures consistent, tree shakable access to individual elements.
  */
 
-export * as anchor from "./anchor";
-export * as article from "./paragraph";
+//export * as anchor from "./anchor";
+//export * as article from "./paragraph";
+console.log('test');

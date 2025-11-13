@@ -1,0 +1,23 @@
+@use "../variables" as *;
+
+$primary:   $blue-500 !default;
+$secondary: $blue !default;
+$tertiary:  $blue !default;
+$success:   $grenn-500 !default;
+$info:      $cyan-500 !default;
+$warning:   $orange-500 !default;
+$danger:    $red-500 !default;
+$light:     $gray-100 !default;
+$dark:      $gray-900 !default;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+) !default;

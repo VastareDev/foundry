@@ -1,0 +1,154 @@
+/**
+ * Vastare Colour Functions
+ * 
+ * Sass utilities for reading colour tokens from the Vastare palette.
+ * These functions provide typed, validated access to colour families
+ * and scales, ensuring consistent token usage across all SCSS modules.
+ *
+ * @version 1.0.0 (file)
+ * @since   0.1.0 (release)
+ */
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:meta';
+
+/**
+ * foundry-docs-start tokens-colours-function-get-colour
+ *
+ * @title       get-colour()
+ * @description Retrieve a colour value from a Vastare colour family and scale.
+ * @group       tokens.colours.functions
+ * 
+ * @param       {string} $family The colour family. (e.g. blue, red, orange, etc)
+ * @param       {number} $scale  The scale value, defaults to 500. (100-900)
+ *
+ * @example     get-colour("blue", 300);        // #7b8c9c
+ * @example     get-colour("purple");           // #6a0572 (defaults to 500)
+ * @example     color: get-colour("teal", 700); // #006666
+ */
+@function get-colour($family, $scale: null) {
+  $family-map: map.get($colour_scales, $family);
+
+  @if meta.type-of($family-map) != 'map' {
+    @error 'get-colour(): unknown colour family `#{$family}`.';
+  }
+
+  @if $scale == null {
+    @return map.get($family-map, "500");
+  }
+
+  $key: '#{$family}-#{$scale}';
+  $value: map.get($family-map, $key);
+
+  @if $value == null {
+    @error 'get-colour(): scale `#{$scale}` is not defined for family `#{$family}.`';
+  }
+
+  @return $value;
+}
+// foundry-docs-end tokens-colours-function-get-colour
+
+
+/**
+ * foundry-docs-start tokens-colours-function-get-colour-scale
+ *
+ * @title       get-colour-scale()
+ * @description Retrieve the entire 100-900 scale map for a given colour family.
+ * @group       tokens.colours.functions
+ * 
+ * @param       {string} $family The colour family. (e.g. blue, red, orange, etc)
+ *
+ * @example     get-colour-scale("blue");                        // #c9d1d8 to #0e151c
+ * @example     color: map.get(get-colour-scale("pink"), "400"); // #df5160
+ */
+@function get-colour-scale($family) {
+  $family-map: map.get($colour_scales, $family);
+
+  @if meta.type-of($family-map) != 'map' {
+    @error 'get-colour-scale(): unknown colour family `#{$family}`.';
+  }
+
+  @return $family-map;
+}
+// foundry-docs-end tokens-colours-function-get-colour-scale
+
+
+/**
+ * foundry-docs-start tokens-colours-function-colour-keys
+ *
+ * @title       colour-keys()
+ * @description Return all scale keys for a given colour family. (100-900)
+ * @group       tokens.colours.functions
+ * 
+ * @param       {string} $family The colour family. (e.g. blue, red, orange, etc)
+ *
+ * @example     colour-keys("blue");        // 100 to 900
+ * @example     length(colour-keys("red")); // 9
+ */
+@function colour-keys($family) {
+  $family-map: map.get($colour_scales, $family);
+
+  @if meta.type-of($family-map) != 'map' {
+    @error 'colour-keys(): unknown colour family `#{$family}`.';
+  }
+
+  @return map.keys($family-map);
+}
+// foundry-docs-end tokens-colours-function-colour-keys
+
+/**
+ * foundry-docs-start tokens-colours-function-colour-families
+ *
+ * @title       colour-families()
+ * @description Return a list of all registered colour families.
+ * @group       tokens.colours.functions
+ *
+ * @example     colour-families(); 
+ * @example     index(colour-families(), "blue");
+ */
+@function colour-families() {
+  @return map.keys($colour_scales);
+}
+// foundry-docs-end tokens-colours-function-colour-families
+
+/**
+ * foundry-docs-start tokens-colours-function-has-colour-family
+ *
+ * @title       has-colour-family()
+ * @description Check whether a colour family exists in the registry.
+ * @group       tokens.colours.functions
+ *
+ * @param       {string} $family The colour family to check. (e.g. blue, red, orange, etc)
+ *
+ * @example     has-colour-family("purple"); // true 
+ * @example     has-colour-family("apple");  // false
+ */
+@function has-colour-family($family) {
+  @return map.has-key($colour_scales, $family);
+}
+// foundry-docs-end tokens-colours-function-has-colour-family
+
+/**
+ * foundry-docs-start tokens-colours-function-has-colour-scale
+ *
+ * @title       has-colour-scale()
+ * @description Check wether a scale exists for a given colour family.
+ * @group       tokens.colours.functions
+ *
+ * @param       {string} $family The colour family to check. (e.g. blue, red, orange, etc)
+ * @param       {number} $scale  The scale value. (100-900)
+ *
+ * @example     has-colour-scale("purple", 300); // true 
+ * @example     has-colour-scale("purple", 950); // false
+ */
+@function has-colour-scale($family, $scale) {
+  $family-map: map.get($colour_scales, $family);
+
+  @if meta.type-of($family-map) != 'map' {
+    @return false;
+  }
+
+  $key: '#{$family}-#{$scale}';
+  @return map.has-key($family-map, $key);
+}
+// foundry-docs-end tokens-colours-function-has-colour-scale

@@ -1,8 +1,22 @@
-/**==================================================================
- * Neutral Palette
- ==================================================================*/
+/**
+ * Vastare Colour Palette
+ * 
+ * - Raw palette values only. (no semantic roles like "primary", "danger", etc)
+ * - Shared across all Vastare subsidiaries, brands, and themes.
+ * - Semantic aliases and theme overrides live in separate token/theme files.
+ *
+ * @version 1.0.0 (file)
+ * @since   0.1.0 (release)
+ */
 
-$white: #fff;
+/**
+ * foundry-docs-start tokens-colours-neutral
+ *
+ * @title       Neutral Palette
+ * @description Neutral grayscale tokens shared across Vastare.
+ * @group       tokens.colours.neutral
+ */
+$white: #ffffff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -25,10 +39,16 @@ $grays: (
   "800": $gray-800,
   "900": $gray-900,
 );
+// foundry-docs-end tokens-colours-neutral
 
-/**==================================================================
- * Colour Palette
- ==================================================================*/
+
+/**
+ * foundry-docs-start tokens-colours-core
+ * 
+ * @title       Core Colour Palette
+ * @description Core brand colour tokens. (mid scale values)
+ * @group       tokens.colours.core
+ */
 $blue: #233b4e;
 $indigo: #4b3869;
 $purple: #6a0572;
@@ -40,7 +60,7 @@ $green: #2e8540;
 $teal: #008080;
 $cyan: #00bcd4;
 
-$colors: (
+$colours: (
   "blue": $blue,
   "indigo": $indigo,
   "purple": $purple,
@@ -56,10 +76,16 @@ $colors: (
   "gray": $gray-600,
   "gray-dark": $gray-800,
 );
+// foundry-docs-end tokens-colours-core
 
-/**==================================================================
- * Extended Colour Palette
- ==================================================================*/
+
+/**
+ * foundry-docs-start tokens-colours-extended
+ *
+ * @title       Extended Colour Palette
+ * @description Full 100-900 extended colours for each core colour.  
+ * @group       tokens.colours.extended
+ */
 $blue-100: #c9d1d8;
 $blue-200: #a5b0bd;
 $blue-300: #7b8c9c;
@@ -122,7 +148,7 @@ $orange-900: #613a16;
 
 $yellow-100: #fff4cc;
 $yellow-200: #ffe999;
-$yellow-300: #fd6;
+$yellow-300: #fdd666;
 $yellow-400: #ffd233;
 $yellow-500: $yellow;
 $yellow-600: #e6b505;
@@ -146,9 +172,9 @@ $teal-300: #66c9c9;
 $teal-400: #33b7b7;
 $teal-500: $teal;
 $teal-600: #007373;
-$teal-700: #066;
+$teal-700: #006666;
 $teal-800: #004c4c;
-$teal-900: #033;
+$teal-900: #003333;
 
 $cyan-100: #ccf2f7;
 $cyan-200: #99e6ef;
@@ -279,3 +305,27 @@ $cyans: (
   "cyan-800": $cyan-800,
   "cyan-900": $cyan-900,
 );
+// foundry-docs-end tokens-colours-extended
+
+
+/**
+ * foundry-docs-start tokens-colours-registry
+ *
+ * @title       Colour Scale Palette
+ * @description Map of maps for iterating colour families programmatically.  
+ * @group       tokens.colours.registry
+ */
+$colour_scales: (
+  "gray": $grays,
+  "blue": $blues,
+  "indigo": $indigos,
+  "purple": $purples,
+  "pink": $pinks,
+  "red": $reds,
+  "orange": $oranges,
+  "yellow": $yellows,
+  "green": $greens,
+  "teal": $teals,
+  "cyan": $cyans
+);
+// foundry-docs-end tokens-colours-registry
