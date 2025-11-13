@@ -1,0 +1,20 @@
+#
+# The repisitory's ignored file and folder patterns for formatting.
+#
+# @link       https://prettier.io/docs/en/ignore.html
+#
+
+# Node Artifact Files
+node_modules
+
+# Distribution and Build Output
+dist
+.vite
+
+# IDE and Editor Folders
+.idea
+.vscode
+
+# Temporary or Generated Files
+*.tmp
+*.log

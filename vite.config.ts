@@ -30,21 +30,9 @@ export default defineConfig({
           __dirname,
           "src/elements/anchor/index.ts"
         ),
-        "elements/article": resolve(
-          __dirname,
-          "src/elements/article/index.ts"
-        ),
-        "elements/div": resolve(
-          __dirname,
-          "src/elements/div/index.ts"
-        ),
         "elements/paragraph": resolve(
           __dirname,
           "src/elements/paragraph/index.ts"
-        ),
-        "elements/section": resolve(
-          __dirname,
-          "src/elements/section/index.ts"
         )
       },
 

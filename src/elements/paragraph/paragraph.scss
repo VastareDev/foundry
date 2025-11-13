@@ -1,5 +1,54 @@
+/** src/elements/paragraph/paragraph.scss
+ *
+ * Scope: ONLY the <p> element and its variants.
+ * Goal: Identical rendering across engines without relying on a global reboot.
+ * Specificity kept low via :where().
+ */
+
 @use "../../scss/variables" as *;
 
-p {
-  color: $primary;
+:where(p) {
+  // Kill UA margins so Chrome/Firefox/Safari stop freestyling different gaps.
+  margin-block: 0;
+
+  // Don't let long tokens nuke layouts.
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+
+  // Inherit line-height from html/body if present.
+  line-height: inherit;
+
+  // Respect user zoom/text-size adjustments.
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
+
+// Controlled vertical rythm between consecutive paragraphs.
+:where(p + p) {
+  margin-block-start: var(--foundry-paragraph-gap, 1rem);
+}
+
+// Tidy up after headings, common editorial pattern.
+:where(h1, h2, h3, h4, h5, h6) + :where(p) {
+  margin-block-start: var(-foundry-heading-to-paragraph-gap, 0.5rem);
+}
+
+// Muted paragraph, lower contrast or tone.
+vf-p--muted {
+  color: var(--foundry-color-text-muted, #6c757d);
+}
+
+// Lead paragraph, slightly larger, more relaxed line-height.
+vf-p--lead {
+  font-size: var(--test, 1.125rem);
+  line-height: var(--test, 1.125rem);
+  margin-block-start: var(--test, 1.125rem);
+}
+
+/**--Accessibility Notes
+ *
+ * - lang/dir/aria-* are passed via attrs in TS; nothing to do here.
+ * - Avoid setting text-align/letter-spacing here; that's layout/brand territory.
+ * - Don't set font-family here. Base typography lives in your core theme.
+ */
