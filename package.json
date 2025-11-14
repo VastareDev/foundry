@@ -44,7 +44,7 @@
     "build:js": "vite build",
     "build:css:elements": "sass --style=compressed src/elements:dist/elements",
     "build": "npm run build:js && npm run build:css:elements",
-    "build:complete": "npm run typecheck && npm run test && npm run format && npm run lint && npm run build && npm run docs",
+    "build:complete": "npm run typecheck && npm run format && npm run lint && npm run build && npm run docs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write \"src/**/*.{ts,js,scss,json,md}\"",

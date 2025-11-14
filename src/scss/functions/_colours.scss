@@ -8,9 +8,11 @@
  * @version 1.0.0 (file)
  * @since   0.1.0 (release)
  */
+
 @use 'sass:map';
 @use 'sass:list';
 @use 'sass:meta';
+@use '../variables/colour_palette' as palette;
 
 /**
  * foundry-docs-start tokens-colours-function-get-colour
@@ -27,21 +29,22 @@
  * @example     color: get-colour("teal", 700); // #006666
  */
 @function get-colour($family, $scale: null) {
-  $family-map: map.get($colour_scales, $family);
+  $family-map: map.get(palette.$colour_scales, $family);
 
   @if meta.type-of($family-map) != 'map' {
     @error 'get-colour(): unknown colour family `#{$family}`.';
   }
 
   @if $scale == null {
-    @return map.get($family-map, "500");
+    $key: '#{$family}-500';
+    @return map.get($family-map, $key);
   }
 
   $key: '#{$family}-#{$scale}';
   $value: map.get($family-map, $key);
 
   @if $value == null {
-    @error 'get-colour(): scale `#{$scale}` is not defined for family `#{$family}.`';
+    @error 'get-colour(): scale `#{$scale}` is not defined for family `#{$family}`.';
   }
 
   @return $value;
@@ -62,7 +65,7 @@
  * @example     color: map.get(get-colour-scale("pink"), "400"); // #df5160
  */
 @function get-colour-scale($family) {
-  $family-map: map.get($colour_scales, $family);
+  $family-map: map.get(palette.$colour_scales, $family);
 
   @if meta.type-of($family-map) != 'map' {
     @error 'get-colour-scale(): unknown colour family `#{$family}`.';
@@ -86,7 +89,7 @@
  * @example     length(colour-keys("red")); // 9
  */
 @function colour-keys($family) {
-  $family-map: map.get($colour_scales, $family);
+  $family-map: map.get(palette.$colour_scales, $family);
 
   @if meta.type-of($family-map) != 'map' {
     @error 'colour-keys(): unknown colour family `#{$family}`.';
@@ -107,7 +110,7 @@
  * @example     index(colour-families(), "blue");
  */
 @function colour-families() {
-  @return map.keys($colour_scales);
+  @return map.keys(palette.$colour_scales);
 }
 // foundry-docs-end tokens-colours-function-colour-families
 
@@ -124,7 +127,7 @@
  * @example     has-colour-family("apple");  // false
  */
 @function has-colour-family($family) {
-  @return map.has-key($colour_scales, $family);
+  @return map.has-key(palette.$colour_scales, $family);
 }
 // foundry-docs-end tokens-colours-function-has-colour-family
 
@@ -142,7 +145,7 @@
  * @example     has-colour-scale("purple", 950); // false
  */
 @function has-colour-scale($family, $scale) {
-  $family-map: map.get($colour_scales, $family);
+  $family-map: map.get(palette.$colour_scales, $family);
 
   @if meta.type-of($family-map) != 'map' {
     @return false;

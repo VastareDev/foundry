@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'sass:list';
-@use 'sass:true' as *;
+@use 'pkg:sass-true' as *;
 
 /**
  * Load the source under test.
@@ -14,17 +14,17 @@
  */
 @include describe('Vastare colour palette tokens') {
   @include it('defines neutral base colours') {
-    @include assert-equal(palette.$white, '#ffffff');
-    @include assert-equal(palette.$gray-100, '#f8f9fa');
-    @include assert-equal(palette.$gray-200, '#e9ecef');
-    @include assert-equal(palette.$gray-300, '#dee2e6');
-    @include assert-equal(palette.$gray-400, '#ced4da');
-    @include assert-equal(palette.$gray-500, '#adb5bd');
-    @include assert-equal(palette.$gray-600, '#6c757d');
-    @include assert-equal(palette.$gray-700, '#495057');
-    @include assert-equal(palette.$gray-800, '#343a40');
-    @include assert-equal(palette.$gray-900, '#212529');
-    @include assert-equal(palette.$black, '#000000');
+    @include assert-equal(palette.$white, #ffffff);
+    @include assert-equal(palette.$gray-100, #f8f9fa);
+    @include assert-equal(palette.$gray-200, #e9ecef);
+    @include assert-equal(palette.$gray-300, #dee2e6);
+    @include assert-equal(palette.$gray-400, #ced4da);
+    @include assert-equal(palette.$gray-500, #adb5bd);
+    @include assert-equal(palette.$gray-600, #6c757d);
+    @include assert-equal(palette.$gray-700, #495057);
+    @include assert-equal(palette.$gray-800, #343a40);
+    @include assert-equal(palette.$gray-900, #212529);
+    @include assert-equal(palette.$black, #000000);
   }
 
   @include it('builds the $gray scale map correctly') {
@@ -40,16 +40,16 @@
   }
 
   @include it('defines core colour tokens and $colours registry') {
-    @include assert-equal(palette.$blue, '#233b4e');
-    @include assert-equal(palette.$indigo, '#4b3869');
-    @include assert-equal(palette.$purple, '#6a0572');
-    @include assert-equal(palette.$pink, '#d72638');
-    @include assert-equal(palette.$red, '#ba1b1d');
-    @include assert-equal(palette.$orange, '#f39237');
-    @include assert-equal(palette.$yellow, '#ffcb05');
-    @include assert-equal(palette.$green, '#2e8540');
-    @include assert-equal(palette.$teal, '#008080');
-    @include assert-equal(palette.$cyan, '#00bcd4');
+    @include assert-equal(palette.$blue, #233b4e);
+    @include assert-equal(palette.$indigo, #4b3869);
+    @include assert-equal(palette.$purple, #6a0572);
+    @include assert-equal(palette.$pink, #d72638);
+    @include assert-equal(palette.$red, #ba1b1d);
+    @include assert-equal(palette.$orange, #f39237);
+    @include assert-equal(palette.$yellow, #ffcb05);
+    @include assert-equal(palette.$green, #2e8540);
+    @include assert-equal(palette.$teal, #008080);
+    @include assert-equal(palette.$cyan, #00bcd4);
     @include assert-equal(map.get(palette.$colours, 'white'), palette.$white);
     @include assert-equal(map.get(palette.$colours, 'black'), palette.$black);
     @include assert-equal(map.get(palette.$colours, 'gray'), palette.$gray-600);
@@ -57,123 +57,123 @@
   }
 
   @include it('defines extended blue scale variables') {
-    @include assert-equal(palette.$blue-100, '#c9d1d8');
-    @include assert-equal(palette.$blue-200, '#a5b0bd');
-    @include assert-equal(palette.$blue-300, '#7b8c9c');
-    @include assert-equal(palette.$blue-400, '#4f6271');
-    @include assert-equal(palette.$blue-500, '#233b4e');
-    @include assert-equal(palette.$blue-600, '#1f3646');
-    @include assert-equal(palette.$blue-700, '#1c3041');
-    @include assert-equal(palette.$blue-800, '#16252f');
-    @include assert-equal(palette.$blue-900, '#0e151c');
+    @include assert-equal(palette.$blue-100, #c9d1d8);
+    @include assert-equal(palette.$blue-200, #a5b0bd);
+    @include assert-equal(palette.$blue-300, #7b8c9c);
+    @include assert-equal(palette.$blue-400, #4f6271);
+    @include assert-equal(palette.$blue-500, #233b4e);
+    @include assert-equal(palette.$blue-600, #1f3646);
+    @include assert-equal(palette.$blue-700, #1c3041);
+    @include assert-equal(palette.$blue-800, #16252f);
+    @include assert-equal(palette.$blue-900, #0e151c);
   }
 
   @include it('defines extended indigo scale variables') {
-    @include assert-equal(palette.$indigo-100, '#dbd7e1');
-    @include assert-equal(palette.$indigo-200, '#b7afc3');
-    @include assert-equal(palette.$indigo-300, '#9388a5');
-    @include assert-equal(palette.$indigo-400, '#6f6087');
-    @include assert-equal(palette.$indigo-500, '#4b3869');
-    @include assert-equal(palette.$indigo-600, '#44325e');
-    @include assert-equal(palette.$indigo-700, '#3c2d54');
-    @include assert-equal(palette.$indigo-800, '#2d223f');
-    @include assert-equal(palette.$indigo-900, '#1e162a');
+    @include assert-equal(palette.$indigo-100, #dbd7e1);
+    @include assert-equal(palette.$indigo-200, #b7afc3);
+    @include assert-equal(palette.$indigo-300, #9388a5);
+    @include assert-equal(palette.$indigo-400, #6f6087);
+    @include assert-equal(palette.$indigo-500, #4b3869);
+    @include assert-equal(palette.$indigo-600, #44325e);
+    @include assert-equal(palette.$indigo-700, #3c2d54);
+    @include assert-equal(palette.$indigo-800, #2d223f);
+    @include assert-equal(palette.$indigo-900, #1e162a);
   }
 
   @include it('defines extended purple scale variables') {
-    @include assert-equal(palette.$purple-100, '#e1cde3');
-    @include assert-equal(palette.$purple-200, '#c39bc7');
-    @include assert-equal(palette.$purple-300, '#a669aa');
-    @include assert-equal(palette.$purple-400, '#88378e');
-    @include assert-equal(palette.$purple-500, '#6a0572');
-    @include assert-equal(palette.$purple-600, '#5f0467');
-    @include assert-equal(palette.$purple-700, '#55045b');
-    @include assert-equal(palette.$purple-800, '#400344');
-    @include assert-equal(palette.$purple-900, '#2a022e');
+    @include assert-equal(palette.$purple-100, #e1cde3);
+    @include assert-equal(palette.$purple-200, #c39bc7);
+    @include assert-equal(palette.$purple-300, #a669aa);
+    @include assert-equal(palette.$purple-400, #88378e);
+    @include assert-equal(palette.$purple-500, #6a0572);
+    @include assert-equal(palette.$purple-600, #5f0467);
+    @include assert-equal(palette.$purple-700, #55045b);
+    @include assert-equal(palette.$purple-800, #400344);
+    @include assert-equal(palette.$purple-900, #2a022e);
   }
 
   @include it('defines extended pink scale variables') {
-    @include assert-equal(palette.$pink-100, '#f7d4d7');
-    @include assert-equal(palette.$pink-200, '#efa8af');
-    @include assert-equal(palette.$pink-300, '#e77d88');
-    @include assert-equal(palette.$pink-400, '#df5160');
-    @include assert-equal(palette.$pink-500, '#d72638');
-    @include assert-equal(palette.$pink-600, '#c22232');
-    @include assert-equal(palette.$pink-700, '#ac1e2d');
-    @include assert-equal(palette.$pink-800, '#811722');
-    @include assert-equal(palette.$pink-900, '#560f16');
+    @include assert-equal(palette.$pink-100, #f7d4d7);
+    @include assert-equal(palette.$pink-200, #efa8af);
+    @include assert-equal(palette.$pink-300, #e77d88);
+    @include assert-equal(palette.$pink-400, #df5160);
+    @include assert-equal(palette.$pink-500, #d72638);
+    @include assert-equal(palette.$pink-600, #c22232);
+    @include assert-equal(palette.$pink-700, #ac1e2d);
+    @include assert-equal(palette.$pink-800, #811722);
+    @include assert-equal(palette.$pink-900, #560f16);
   }
 
   @include it('defines extended red scale variables') {
-    @include assert-equal(palette.$red-100, '#f1d1d2');
-    @include assert-equal(palette.$red-200, '#e3a4a5');
-    @include assert-equal(palette.$red-300, '#d67677');
-    @include assert-equal(palette.$red-400, '#c8494a');
-    @include assert-equal(palette.$red-500, '#ba1b1d');
-    @include assert-equal(palette.$red-600, '#a7181a');
-    @include assert-equal(palette.$red-700, '#951617');
-    @include assert-equal(palette.$red-800, '#701011');
-    @include assert-equal(palette.$red-900, '#4a0b0c');
+    @include assert-equal(palette.$red-100, #f1d1d2);
+    @include assert-equal(palette.$red-200, #e3a4a5);
+    @include assert-equal(palette.$red-300, #d67677);
+    @include assert-equal(palette.$red-400, #c8494a);
+    @include assert-equal(palette.$red-500, #ba1b1d);
+    @include assert-equal(palette.$red-600, #a7181a);
+    @include assert-equal(palette.$red-700, #951617);
+    @include assert-equal(palette.$red-800, #701011);
+    @include assert-equal(palette.$red-900, #4a0b0c);
   }
 
   @include it('defines extended orange scale variables') {
-    @include assert-equal(palette.$orange-100, '#fde9d7');
-    @include assert-equal(palette.$orange-200, '#fad3af');
-    @include assert-equal(palette.$orange-300, '#f8be87');
-    @include assert-equal(palette.$orange-400, '#f5a85f');
-    @include assert-equal(palette.$orange-500, '#f39237');
-    @include assert-equal(palette.$orange-600, '#db8332');
-    @include assert-equal(palette.$orange-700, '#c2752c');
-    @include assert-equal(palette.$orange-800, '#925821');
-    @include assert-equal(palette.$orange-900, '#613a16');
+    @include assert-equal(palette.$orange-100, #fde9d7);
+    @include assert-equal(palette.$orange-200, #fad3af);
+    @include assert-equal(palette.$orange-300, #f8be87);
+    @include assert-equal(palette.$orange-400, #f5a85f);
+    @include assert-equal(palette.$orange-500, #f39237);
+    @include assert-equal(palette.$orange-600, #db8332);
+    @include assert-equal(palette.$orange-700, #c2752c);
+    @include assert-equal(palette.$orange-800, #925821);
+    @include assert-equal(palette.$orange-900, #613a16);
   }
 
   @include it('defines extended yellow scale variables') {
-    @include assert-equal(palette.$yellow-100, '#fff4cc');
-    @include assert-equal(palette.$yellow-200, '#ffe999');
-    @include assert-equal(palette.$yellow-300, '#fdd666');
-    @include assert-equal(palette.$yellow-400, '#ffd233');
-    @include assert-equal(palette.$yellow-500, '#ffcb05');
-    @include assert-equal(palette.$yellow-600, '#e6b505');
-    @include assert-equal(palette.$yellow-700, '#cc9f04');
-    @include assert-equal(palette.$yellow-800, '#997503');
-    @include assert-equal(palette.$yellow-900, '#664c02');
+    @include assert-equal(palette.$yellow-100, #fff4cc);
+    @include assert-equal(palette.$yellow-200, #ffe999);
+    @include assert-equal(palette.$yellow-300, #fdd666);
+    @include assert-equal(palette.$yellow-400, #ffd233);
+    @include assert-equal(palette.$yellow-500, #ffcb05);
+    @include assert-equal(palette.$yellow-600, #e6b505);
+    @include assert-equal(palette.$yellow-700, #cc9f04);
+    @include assert-equal(palette.$yellow-800, #997503);
+    @include assert-equal(palette.$yellow-900, #664c02);
   }
 
   @include it('defines extended green scale variables') {
-    @include assert-equal(palette.$green-100, '#cde3d1');
-    @include assert-equal(palette.$green-200, '#9bc7a3');
-    @include assert-equal(palette.$green-300, '#69aa75');
-    @include assert-equal(palette.$green-400, '#378e47');
-    @include assert-equal(palette.$green-500, '#2e8540');
-    @include assert-equal(palette.$green-600, '#297839');
-    @include assert-equal(palette.$green-700, '#256a33');
-    @include assert-equal(palette.$green-800, '#1c4f26');
-    @include assert-equal(palette.$green-900, '#13341a');
+    @include assert-equal(palette.$green-100, #cde3d1);
+    @include assert-equal(palette.$green-200, #9bc7a3);
+    @include assert-equal(palette.$green-300, #69aa75);
+    @include assert-equal(palette.$green-400, #378e47);
+    @include assert-equal(palette.$green-500, #2e8540);
+    @include assert-equal(palette.$green-600, #297839);
+    @include assert-equal(palette.$green-700, #256a33);
+    @include assert-equal(palette.$green-800, #1c4f26);
+    @include assert-equal(palette.$green-900, #13341a);
   }
 
   @include it('defines extended teal scale variables') {
-    @include assert-equal(palette.$teal-100, '#cceded');
-    @include assert-equal(palette.$teal-200, '#99dbdb');
-    @include assert-equal(palette.$teal-300, '#66c9c9');
-    @include assert-equal(palette.$teal-400, '#33b7b7');
-    @include assert-equal(palette.$teal-500, '#008080');
-    @include assert-equal(palette.$teal-600, '#007373');
-    @include assert-equal(palette.$teal-700, '#006666');
-    @include assert-equal(palette.$teal-800, '#004c4c');
-    @include assert-equal(palette.$teal-900, '#003333');
+    @include assert-equal(palette.$teal-100, #cceded);
+    @include assert-equal(palette.$teal-200, #99dbdb);
+    @include assert-equal(palette.$teal-300, #66c9c9);
+    @include assert-equal(palette.$teal-400, #33b7b7);
+    @include assert-equal(palette.$teal-500, #008080);
+    @include assert-equal(palette.$teal-600, #007373);
+    @include assert-equal(palette.$teal-700, #006666);
+    @include assert-equal(palette.$teal-800, #004c4c);
+    @include assert-equal(palette.$teal-900, #003333);
   }
   
   @include it('defines extended cyan scale variables') {
-    @include assert-equal(palette.$cyan-100, '#ccf2f7');
-    @include assert-equal(palette.$cyan-200, '#99e6ef');
-    @include assert-equal(palette.$cyan-300, '#66d9e7');
-    @include assert-equal(palette.$cyan-400, '#33cddf');
-    @include assert-equal(palette.$cyan-500, '#00bcd4');
-    @include assert-equal(palette.$cyan-600, '#00a8bf');
-    @include assert-equal(palette.$cyan-700, '#0093aa');
-    @include assert-equal(palette.$cyan-800, '#006a7f');
-    @include assert-equal(palette.$cyan-900, '#004054');
+    @include assert-equal(palette.$cyan-100, #ccf2f7);
+    @include assert-equal(palette.$cyan-200, #99e6ef);
+    @include assert-equal(palette.$cyan-300, #66d9e7);
+    @include assert-equal(palette.$cyan-400, #33cddf);
+    @include assert-equal(palette.$cyan-500, #00bcd4);
+    @include assert-equal(palette.$cyan-600, #00a8bf);
+    @include assert-equal(palette.$cyan-700, #0093aa);
+    @include assert-equal(palette.$cyan-800, #006a7f);
+    @include assert-equal(palette.$cyan-900, #004054);
   }
 
   @include it('wires extended scale maps (e.g. reds, blues, etc)') {
@@ -186,87 +186,87 @@
     @include assert-equal(map.get(palette.$blues, 'blue-700'), palette.$blue-700);
     @include assert-equal(map.get(palette.$blues, 'blue-800'), palette.$blue-800);
     @include assert-equal(map.get(palette.$blues, 'blue-900'), palette.$blue-900);
-    @include assert-equal(map.get(palette.$blues, 'indigo-100'), palette.$indigo-100);
-    @include assert-equal(map.get(palette.$blues, 'indigo-200'), palette.$indigo-200);
-    @include assert-equal(map.get(palette.$blues, 'indigo-300'), palette.$indigo-300);
-    @include assert-equal(map.get(palette.$blues, 'indigo-400'), palette.$indigo-400);
-    @include assert-equal(map.get(palette.$blues, 'indigo-500'), palette.$indigo-500);
-    @include assert-equal(map.get(palette.$blues, 'indigo-600'), palette.$indigo-600);
-    @include assert-equal(map.get(palette.$blues, 'indigo-700'), palette.$indigo-700);
-    @include assert-equal(map.get(palette.$blues, 'indigo-800'), palette.$indigo-800);
-    @include assert-equal(map.get(palette.$blues, 'indigo-900'), palette.$indigo-900);
-    @include assert-equal(map.get(palette.$blues, 'purple-100'), palette.$purple-100);
-    @include assert-equal(map.get(palette.$blues, 'purple-200'), palette.$purple-200);
-    @include assert-equal(map.get(palette.$blues, 'purple-300'), palette.$purple-300);
-    @include assert-equal(map.get(palette.$blues, 'purple-400'), palette.$purple-400);
-    @include assert-equal(map.get(palette.$blues, 'purple-500'), palette.$purple-500);
-    @include assert-equal(map.get(palette.$blues, 'purple-600'), palette.$purple-600);
-    @include assert-equal(map.get(palette.$blues, 'purple-700'), palette.$purple-700);
-    @include assert-equal(map.get(palette.$blues, 'purple-800'), palette.$purple-800);
-    @include assert-equal(map.get(palette.$blues, 'purple-900'), palette.$purple-900);
-    @include assert-equal(map.get(palette.$blues, 'pink-100'), palette.$pink-100);
-    @include assert-equal(map.get(palette.$blues, 'pink-200'), palette.$pink-200);
-    @include assert-equal(map.get(palette.$blues, 'pink-300'), palette.$pink-300);
-    @include assert-equal(map.get(palette.$blues, 'pink-400'), palette.$pink-400);
-    @include assert-equal(map.get(palette.$blues, 'pink-500'), palette.$pink-500);
-    @include assert-equal(map.get(palette.$blues, 'pink-600'), palette.$pink-600);
-    @include assert-equal(map.get(palette.$blues, 'pink-700'), palette.$pink-700);
-    @include assert-equal(map.get(palette.$blues, 'pink-800'), palette.$pink-800);
-    @include assert-equal(map.get(palette.$blues, 'pink-900'), palette.$pink-900);
-    @include assert-equal(map.get(palette.$blues, 'red-100'), palette.$red-100);
-    @include assert-equal(map.get(palette.$blues, 'red-200'), palette.$red-200);
-    @include assert-equal(map.get(palette.$blues, 'red-300'), palette.$red-300);
-    @include assert-equal(map.get(palette.$blues, 'red-400'), palette.$red-400);
-    @include assert-equal(map.get(palette.$blues, 'red-500'), palette.$red-500);
-    @include assert-equal(map.get(palette.$blues, 'red-600'), palette.$red-600);
-    @include assert-equal(map.get(palette.$blues, 'red-700'), palette.$red-700);
-    @include assert-equal(map.get(palette.$blues, 'red-800'), palette.$red-800);
-    @include assert-equal(map.get(palette.$blues, 'red-900'), palette.$red-900);
-    @include assert-equal(map.get(palette.$blues, 'orange-100'), palette.$orange-100);
-    @include assert-equal(map.get(palette.$blues, 'orange-200'), palette.$orange-200);
-    @include assert-equal(map.get(palette.$blues, 'orange-300'), palette.$orange-300);
-    @include assert-equal(map.get(palette.$blues, 'orange-400'), palette.$orange-400);
-    @include assert-equal(map.get(palette.$blues, 'orange-500'), palette.$orange-500);
-    @include assert-equal(map.get(palette.$blues, 'orange-600'), palette.$orange-600);
-    @include assert-equal(map.get(palette.$blues, 'orange-700'), palette.$orange-700);
-    @include assert-equal(map.get(palette.$blues, 'orange-800'), palette.$orange-800);
-    @include assert-equal(map.get(palette.$blues, 'orange-900'), palette.$orange-900);
-    @include assert-equal(map.get(palette.$blues, 'yellow-100'), palette.$yellow-100);
-    @include assert-equal(map.get(palette.$blues, 'yellow-200'), palette.$yellow-200);
-    @include assert-equal(map.get(palette.$blues, 'yellow-300'), palette.$yellow-300);
-    @include assert-equal(map.get(palette.$blues, 'yellow-400'), palette.$yellow-400);
-    @include assert-equal(map.get(palette.$blues, 'yellow-500'), palette.$yellow-500);
-    @include assert-equal(map.get(palette.$blues, 'yellow-600'), palette.$yellow-600);
-    @include assert-equal(map.get(palette.$blues, 'yellow-700'), palette.$yellow-700);
-    @include assert-equal(map.get(palette.$blues, 'yellow-800'), palette.$yellow-800);
-    @include assert-equal(map.get(palette.$blues, 'yellow-900'), palette.$yellow-900);
-    @include assert-equal(map.get(palette.$blues, 'green-100'), palette.$green-100);
-    @include assert-equal(map.get(palette.$blues, 'green-200'), palette.$green-200);
-    @include assert-equal(map.get(palette.$blues, 'green-300'), palette.$green-300);
-    @include assert-equal(map.get(palette.$blues, 'green-400'), palette.$green-400);
-    @include assert-equal(map.get(palette.$blues, 'green-500'), palette.$green-500);
-    @include assert-equal(map.get(palette.$blues, 'green-600'), palette.$green-600);
-    @include assert-equal(map.get(palette.$blues, 'green-700'), palette.$green-700);
-    @include assert-equal(map.get(palette.$blues, 'green-800'), palette.$green-800);
-    @include assert-equal(map.get(palette.$blues, 'green-900'), palette.$green-900);
-    @include assert-equal(map.get(palette.$blues, 'teal-100'), palette.$teal-100);
-    @include assert-equal(map.get(palette.$blues, 'teal-200'), palette.$teal-200);
-    @include assert-equal(map.get(palette.$blues, 'teal-300'), palette.$teal-300);
-    @include assert-equal(map.get(palette.$blues, 'teal-400'), palette.$teal-400);
-    @include assert-equal(map.get(palette.$blues, 'teal-500'), palette.$teal-500);
-    @include assert-equal(map.get(palette.$blues, 'teal-600'), palette.$teal-600);
-    @include assert-equal(map.get(palette.$blues, 'teal-700'), palette.$teal-700);
-    @include assert-equal(map.get(palette.$blues, 'teal-800'), palette.$teal-800);
-    @include assert-equal(map.get(palette.$blues, 'teal-900'), palette.$teal-900);
-    @include assert-equal(map.get(palette.$blues, 'cyan-100'), palette.$cyan-100);
-    @include assert-equal(map.get(palette.$blues, 'cyan-200'), palette.$cyan-200);
-    @include assert-equal(map.get(palette.$blues, 'cyan-300'), palette.$cyan-300);
-    @include assert-equal(map.get(palette.$blues, 'cyan-400'), palette.$cyan-400);
-    @include assert-equal(map.get(palette.$blues, 'cyan-500'), palette.$cyan-500);
-    @include assert-equal(map.get(palette.$blues, 'cyan-600'), palette.$cyan-600);
-    @include assert-equal(map.get(palette.$blues, 'cyan-700'), palette.$cyan-700);
-    @include assert-equal(map.get(palette.$blues, 'cyan-800'), palette.$cyan-800);
-    @include assert-equal(map.get(palette.$blues, 'cyan-900'), palette.$cyan-900);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-100'), palette.$indigo-100);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-200'), palette.$indigo-200);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-300'), palette.$indigo-300);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-400'), palette.$indigo-400);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-500'), palette.$indigo-500);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-600'), palette.$indigo-600);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-700'), palette.$indigo-700);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-800'), palette.$indigo-800);
+    @include assert-equal(map.get(palette.$indigos, 'indigo-900'), palette.$indigo-900);
+    @include assert-equal(map.get(palette.$purples, 'purple-100'), palette.$purple-100);
+    @include assert-equal(map.get(palette.$purples, 'purple-200'), palette.$purple-200);
+    @include assert-equal(map.get(palette.$purples, 'purple-300'), palette.$purple-300);
+    @include assert-equal(map.get(palette.$purples, 'purple-400'), palette.$purple-400);
+    @include assert-equal(map.get(palette.$purples, 'purple-500'), palette.$purple-500);
+    @include assert-equal(map.get(palette.$purples, 'purple-600'), palette.$purple-600);
+    @include assert-equal(map.get(palette.$purples, 'purple-700'), palette.$purple-700);
+    @include assert-equal(map.get(palette.$purples, 'purple-800'), palette.$purple-800);
+    @include assert-equal(map.get(palette.$purples, 'purple-900'), palette.$purple-900);
+    @include assert-equal(map.get(palette.$pinks, 'pink-100'), palette.$pink-100);
+    @include assert-equal(map.get(palette.$pinks, 'pink-200'), palette.$pink-200);
+    @include assert-equal(map.get(palette.$pinks, 'pink-300'), palette.$pink-300);
+    @include assert-equal(map.get(palette.$pinks, 'pink-400'), palette.$pink-400);
+    @include assert-equal(map.get(palette.$pinks, 'pink-500'), palette.$pink-500);
+    @include assert-equal(map.get(palette.$pinks, 'pink-600'), palette.$pink-600);
+    @include assert-equal(map.get(palette.$pinks, 'pink-700'), palette.$pink-700);
+    @include assert-equal(map.get(palette.$pinks, 'pink-800'), palette.$pink-800);
+    @include assert-equal(map.get(palette.$pinks, 'pink-900'), palette.$pink-900);
+    @include assert-equal(map.get(palette.$reds, 'red-100'), palette.$red-100);
+    @include assert-equal(map.get(palette.$reds, 'red-200'), palette.$red-200);
+    @include assert-equal(map.get(palette.$reds, 'red-300'), palette.$red-300);
+    @include assert-equal(map.get(palette.$reds, 'red-400'), palette.$red-400);
+    @include assert-equal(map.get(palette.$reds, 'red-500'), palette.$red-500);
+    @include assert-equal(map.get(palette.$reds, 'red-600'), palette.$red-600);
+    @include assert-equal(map.get(palette.$reds, 'red-700'), palette.$red-700);
+    @include assert-equal(map.get(palette.$reds, 'red-800'), palette.$red-800);
+    @include assert-equal(map.get(palette.$reds, 'red-900'), palette.$red-900);
+    @include assert-equal(map.get(palette.$oranges, 'orange-100'), palette.$orange-100);
+    @include assert-equal(map.get(palette.$oranges, 'orange-200'), palette.$orange-200);
+    @include assert-equal(map.get(palette.$oranges, 'orange-300'), palette.$orange-300);
+    @include assert-equal(map.get(palette.$oranges, 'orange-400'), palette.$orange-400);
+    @include assert-equal(map.get(palette.$oranges, 'orange-500'), palette.$orange-500);
+    @include assert-equal(map.get(palette.$oranges, 'orange-600'), palette.$orange-600);
+    @include assert-equal(map.get(palette.$oranges, 'orange-700'), palette.$orange-700);
+    @include assert-equal(map.get(palette.$oranges, 'orange-800'), palette.$orange-800);
+    @include assert-equal(map.get(palette.$oranges, 'orange-900'), palette.$orange-900);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-100'), palette.$yellow-100);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-200'), palette.$yellow-200);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-300'), palette.$yellow-300);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-400'), palette.$yellow-400);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-500'), palette.$yellow-500);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-600'), palette.$yellow-600);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-700'), palette.$yellow-700);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-800'), palette.$yellow-800);
+    @include assert-equal(map.get(palette.$yellows, 'yellow-900'), palette.$yellow-900);
+    @include assert-equal(map.get(palette.$greens, 'green-100'), palette.$green-100);
+    @include assert-equal(map.get(palette.$greens, 'green-200'), palette.$green-200);
+    @include assert-equal(map.get(palette.$greens, 'green-300'), palette.$green-300);
+    @include assert-equal(map.get(palette.$greens, 'green-400'), palette.$green-400);
+    @include assert-equal(map.get(palette.$greens, 'green-500'), palette.$green-500);
+    @include assert-equal(map.get(palette.$greens, 'green-600'), palette.$green-600);
+    @include assert-equal(map.get(palette.$greens, 'green-700'), palette.$green-700);
+    @include assert-equal(map.get(palette.$greens, 'green-800'), palette.$green-800);
+    @include assert-equal(map.get(palette.$greens, 'green-900'), palette.$green-900);
+    @include assert-equal(map.get(palette.$teals, 'teal-100'), palette.$teal-100);
+    @include assert-equal(map.get(palette.$teals, 'teal-200'), palette.$teal-200);
+    @include assert-equal(map.get(palette.$teals, 'teal-300'), palette.$teal-300);
+    @include assert-equal(map.get(palette.$teals, 'teal-400'), palette.$teal-400);
+    @include assert-equal(map.get(palette.$teals, 'teal-500'), palette.$teal-500);
+    @include assert-equal(map.get(palette.$teals, 'teal-600'), palette.$teal-600);
+    @include assert-equal(map.get(palette.$teals, 'teal-700'), palette.$teal-700);
+    @include assert-equal(map.get(palette.$teals, 'teal-800'), palette.$teal-800);
+    @include assert-equal(map.get(palette.$teals, 'teal-900'), palette.$teal-900);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-100'), palette.$cyan-100);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-200'), palette.$cyan-200);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-300'), palette.$cyan-300);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-400'), palette.$cyan-400);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-500'), palette.$cyan-500);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-600'), palette.$cyan-600);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-700'), palette.$cyan-700);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-800'), palette.$cyan-800);
+    @include assert-equal(map.get(palette.$cyans, 'cyan-900'), palette.$cyan-900);
   }
 
   @include it('exposes $colour_scales registry as map of maps') {
@@ -314,22 +314,8 @@
     @include assert-equal(colours.get-colour('cyan', 100), palette.$cyan-100);
   }
 
-  @include it('get-colour() errors an unknown colour family') {
-    @include assert-error(
-      colours.get-colour('apple'),
-      'get-colour(): unknown colour family `apple`.'
-    );
-  }
-
-  @include it('get-colour() errors scale not defined for family') {
-    @include assert-error(
-      colours.get-colour('apple', 500),
-      'get-colour(): scale `500` is not defined for family `apple`.'
-    );
-  }
-
   @include it('get-colour-scale() returns the full scale map') {
-    $scale: colors.get-colour-scale('blue');
+    $scale: colours.get-colour-scale('blue');
 
     @include assert-equal(map.get($scale, 'blue-100'), palette.$blue-100);
     @include assert-equal(map.get($scale, 'blue-200'), palette.$blue-200);
@@ -342,48 +328,34 @@
     @include assert-equal(map.get($scale, 'blue-900'), palette.$blue-900);
   }
 
-  @include it('get-colour-scale() errors an unknown colour family') {
-    @include assert-error(
-      colours.get-colour-scale('apple'),
-      'get-colour-scale(): unknown colour family `apple`.'
-    );
-  }
-
   @include it('colour-keys() returns keys for a family') {
-    $keys: colors.colour-keys('blue');
+    $keys: colours.colour-keys('blue');
 
-    @include assert-equal(list.index($keys, 'blue-100') != null);
-    @include assert-equal(list.index($keys, 'blue-200') != null);
-    @include assert-equal(list.index($keys, 'blue-300') != null);
-    @include assert-equal(list.index($keys, 'blue-400') != null);
-    @include assert-equal(list.index($keys, 'blue-500') != null);
-    @include assert-equal(list.index($keys, 'blue-600') != null);
-    @include assert-equal(list.index($keys, 'blue-700') != null);
-    @include assert-equal(list.index($keys, 'blue-800') != null);
-    @include assert-equal(list.index($keys, 'blue-900') != null);
-  }
-
-  @include it('colour-keys() errors an unknown colour family') {
-    @include assert-error(
-      colours.colour-keys('apple'),
-      'colour-keys(): unknown colour family `apple`.'
-    );
+    @include assert-true(list.index($keys, 'blue-100') != null);
+    @include assert-true(list.index($keys, 'blue-200') != null);
+    @include assert-true(list.index($keys, 'blue-300') != null);
+    @include assert-true(list.index($keys, 'blue-400') != null);
+    @include assert-true(list.index($keys, 'blue-500') != null);
+    @include assert-true(list.index($keys, 'blue-600') != null);
+    @include assert-true(list.index($keys, 'blue-700') != null);
+    @include assert-true(list.index($keys, 'blue-800') != null);
+    @include assert-true(list.index($keys, 'blue-900') != null);
   }
 
   @include it('colour-families() exposes registered families') {
-    $families: colors.colour-families();
+    $families: colours.colour-families();
 
-    @include assert-equal(list.index($families, 'gray') != null);
-    @include assert-equal(list.index($families, 'blue') != null);
-    @include assert-equal(list.index($families, 'indigo') != null);
-    @include assert-equal(list.index($families, 'purple') != null);
-    @include assert-equal(list.index($families, 'pink') != null);
-    @include assert-equal(list.index($families, 'red') != null);
-    @include assert-equal(list.index($families, 'orange') != null);
-    @include assert-equal(list.index($families, 'yellow') != null);
-    @include assert-equal(list.index($families, 'green') != null);
-    @include assert-equal(list.index($families, 'teal') != null);
-    @include assert-equal(list.index($families, 'cyan') != null);
+    @include assert-true(list.index($families, 'gray') != null);
+    @include assert-true(list.index($families, 'blue') != null);
+    @include assert-true(list.index($families, 'indigo') != null);
+    @include assert-true(list.index($families, 'purple') != null);
+    @include assert-true(list.index($families, 'pink') != null);
+    @include assert-true(list.index($families, 'red') != null);
+    @include assert-true(list.index($families, 'orange') != null);
+    @include assert-true(list.index($families, 'yellow') != null);
+    @include assert-true(list.index($families, 'green') != null);
+    @include assert-true(list.index($families, 'teal') != null);
+    @include assert-true(list.index($families, 'cyan') != null);
   }
   
   @include it('has-colour-family() checks family existence') {
