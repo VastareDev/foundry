@@ -1,0 +1,16 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/index.ts"
+  ],
+  "out": "public/api",
+  "tsconfig": "tsconfig.json",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "readme": "none",
+  "categorizeByGroup": true,
+  "sort": [
+    "source-order"
+  ]
+}

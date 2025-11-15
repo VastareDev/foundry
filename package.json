@@ -41,26 +41,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build:js": "vite build",
-    "build:css:elements": "sass --style=compressed src/elements:dist/elements",
-    "build": "npm run build:js && npm run build:css:elements",
-    "build:complete": "npm run typecheck && npm run format && npm run lint && npm run build && npm run docs",
+    "build": "vite build && npm run build:css:elements",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier --write \"src/**/*.{ts,js,scss,json,md}\"",
-    "lint:styles": "stylelint \"src/**/*.{css,scss}\" --fix",
-    "lint:scripts": "eslint \"src/**/*.{ts,js}\" --fix",
-    "lint": "npm run lint:styles && npm run lint:scripts",
-    "test": "npm run test:scripts",
-    "test:scripts": "vitest",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest run --coverage",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "docs:ts": "typedoc",
-    "docs:scss": "node build/scripts/extract-scss-docs.mjs",
-    "docs": "npm run docs:ts && npm run docs:scss && npm run docs:build"
+    "build:css:elements": "sass --style=compressed src/elements:dist/elements"
   },
   "devDependencies": {
     "vite": "^7.2.2",

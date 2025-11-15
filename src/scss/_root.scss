@@ -1,2 +1,5 @@
+@use './variables/tokens' as *;
+
 :root {
+    --test: $red;
 }
