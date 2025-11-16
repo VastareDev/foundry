@@ -1,14 +1,14 @@
-@use "../variables" as *;
+@use "./colour_palette" as palette;
 
-$primary:   $blue-500 !default;
-$secondary: $blue !default;
-$tertiary:  $blue !default;
-$success:   $grenn-500 !default;
-$info:      $cyan-500 !default;
-$warning:   $orange-500 !default;
-$danger:    $red-500 !default;
-$light:     $gray-100 !default;
-$dark:      $gray-900 !default;
+$primary:   palette.$blue-500 !default;
+$secondary: palette.$blue !default;
+$tertiary:  palette.$blue !default;
+$success:   palette.$green-500 !default;
+$info:      palette.$cyan-500 !default;
+$warning:   palette.$orange-500 !default;
+$danger:    palette.$red-500 !default;
+$light:     palette.$gray-100 !default;
+$dark:      palette.$gray-900 !default;
 
 $theme-colors: (
   "primary": $primary,

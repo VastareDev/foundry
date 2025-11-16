@@ -14,7 +14,7 @@
   },
   "type": "module",
   "main": "./dist/index.js",
-  "style": "/dist/styles/foundry.css",
+  "style": "./dist/styles/main.css",
   "files": [
     "dist",
     "src"
@@ -41,30 +41,24 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build:css:elements",
     "preview": "vite preview",
-    "build:css:elements": "sass --style=compressed src/elements:dist/elements"
+    "build": "vite build && npm run build:css && npm run build:types && npm run docs",
+    "build:types": "tsc --emitDeclarationOnly -p tsconfig.json",
+    "build:css": "npm run build:css:elements && npm run build:css:main && npm run build:css:foundry && npm run build:css:docs",
+    "build:css:elements": "sass --style=compressed src/elements:dist/elements",
+    "build:css:main": "sass --style=compressed src/scss/main.scss dist/css/main.css",
+    "build:css:foundry": "sass --style=compressed src/scss/foundry.scss dist/css/foundry.css",
+    "build:css:docs": "sass --style=compressed src/scss/docs.scss docs/public/css/docs.css",
+    "docs": "npm run docs:build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "vite": "^7.2.2",
     "sass": "^1.93.3",
     "typescript": "^5.9.3",
-    "prettier": "^3.6.2",
-    "stylelint": "^16.25.0",
-    "stylelint-config-standard": "^39.0.1",
-    "stylelint-config-standard-scss": "^16.0.0",
-    "stylelint-scss": "^6.12.1",
-    "eslint": "^9.39.1",
-    "@typescript-eslint/parser": "^8.46.4",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-config-prettier": "10.1.8",
-    "vitest": "^4.0.8",
-    "@vitest/coverage-v8": "^4.0.8",
-    "sass-true": "^9.0.0",
-    "vitepress": "^1.6.4",
-    "typedoc": "^0.28.14",
-    "glob": "^11.0.3"
+    "vitepress": "^1.6.4"
   },
   "publishConfig": {
     "access": "public"

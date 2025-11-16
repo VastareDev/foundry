@@ -1,3 +1,5 @@
+@use 'variables/tokens' as *;
+
 body {
-  color: var(--test);
+  background-color: var(--test);
 }

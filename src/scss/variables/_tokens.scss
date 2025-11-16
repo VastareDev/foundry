@@ -1,2 +1,36 @@
-@forward "./colour_palette";
+/**
+ * Foundry Token Surface
+ *
+ * The tokens entrypoint exposes the public design token API for Foundry.
+ * It aggregates internal token modules (options, colour palette, theme, 
+ * body, spacing, and typography) into a single import surface so consuming
+ * projects can depend on one stable path instead of multiple internals.
+ *
+ * Any new token module intended for public use should be forwarded here
+ * to remain part of the official, versioned token contract.
+ *
+ * @version 1.0.0 (file)
+ * @since   0.1.0 (release)
+ */
+
+/**
+ * foundry-docs-start tokens-root
+ *
+ * @id          tokens.root
+ * @kind        section
+ * @level       2
+ * @title       Foundry Token Surface
+ * @description Public barrel for all Foundry design tokens.
+ * @group       tokens
+ * @version     1.0.0 (section)
+ * @since       1.0.0 (file)
+ */
+@forward "./options";
+@forward "./colour-palette";
 @forward "./theme";
+@forward "./body";
+@forward "./spacing";
+@forward "./typography";
+/**
+ * foundry-docs-end tokens-root
+ */

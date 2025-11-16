@@ -28,11 +28,11 @@ export default defineConfig({
 
         "elements/anchor": resolve(
           __dirname,
-          "src/elements/anchor/index.ts"
+          "src/elements/anchor/anchor.ts"
         ),
         "elements/paragraph": resolve(
           __dirname,
-          "src/elements/paragraph/index.ts"
+          "src/elements/paragraph/paragraph.ts"
         )
       },
 
@@ -63,32 +63,11 @@ export default defineConfig({
     rollupOptions: {
       external: [],
       output: {
-        /**
-         * @function assetFileNames
-         * @description Defines how non JavaScript assets (e.g. CSS) are named and created.
-         * @param {object} assetInfo - Rollup asset information object. 
-         * @returns {string} File path for emitted assets.
-         */
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return "styles/[name].[ext]";
-          }
-          return assetInfo.name ?? "[name][extname]";
-        },
-
         // Name non entry chuncks in predictable way and move them out of root.
         chunkFileNames: "chunks/[name].js"
       }
     },
     // Generate source maps for easier debugging in consuming apps.
     sourcemap: true
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // Allow SCSS files to resolve imports relative to src/.
-        includePaths: ["src"]
-      }
-    }
   }
 });

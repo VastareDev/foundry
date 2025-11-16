@@ -1,0 +1,1 @@
+{"version":3,"file":"paragraph.js","sources":["../../src/elements/paragraph/paragraph.ts"],"sourcesContent":["export const placeholderTwo = (): void => {\r\n  \r\n}\r\n"],"names":["placeholderTwo"],"mappings":"AAAO,MAAMA,IAAiB,MAAY;AAE1C;;;;"}

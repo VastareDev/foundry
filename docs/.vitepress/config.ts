@@ -10,12 +10,12 @@ export default defineConfig({
       dark: "/img/symbol-white.png"
     },
     nav: [
-      { text: 'Getting Started', link: '/getting-started' },
+      { text: 'Getting Started', link: '/' },
       { text: 'Usage', link: '/usage/' },
       { text: 'API', link: '/reference/' }
     ],
     sidebar: {
-      '/getting-started/': [
+      '/': [
         {
           text: "Introduction",
           items: [
